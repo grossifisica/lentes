@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Settings2, RefreshCw, Sparkles, BookOpen, Layers } from 'lucide-react';
+import { Settings2, RefreshCw, Sparkles, BookOpen, Layers, Eye, EyeOff } from 'lucide-react';
 
 type FaceType = 'convex' | 'flat' | 'concave';
 
@@ -10,6 +10,7 @@ export default function LensTypes() {
   const [r2, setR2] = useState<number>(150);
   const [nMedium, setNMedium] = useState<number>(1.0);
   const [nLens, setNLens] = useState<number>(1.5);
+  const [showRays, setShowRays] = useState<boolean>(true);
 
   const width = 600;
   const height = 400;
@@ -476,6 +477,17 @@ export default function LensTypes() {
               <Layers size={18} className="text-blue-500" />
               <span className="text-sm font-bold text-slate-700">Simulador de Refração Dupla</span>
             </div>
+            <button
+              onClick={() => setShowRays(!showRays)}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition-all ${
+                showRays
+                  ? 'bg-blue-50 border-blue-200 text-blue-600 hover:bg-blue-100'
+                  : 'bg-slate-100 border-slate-200 text-slate-500 hover:bg-slate-200'
+              }`}
+            >
+              {showRays ? <Eye size={14} /> : <EyeOff size={14} />}
+              {showRays ? 'Ocultar Raios' : 'Mostrar Raios'}
+            </button>
           </div>
 
           <div className="relative">
@@ -500,7 +512,7 @@ export default function LensTypes() {
               />
 
               {/* Render Ray Paths */}
-              {rays.map((ray, idx) => (
+              {showRays && rays.map((ray, idx) => (
                 <g key={idx}>
                   <polyline
                     points={ray.points.map(p => `${p.x},${p.y}`).join(' ')}
