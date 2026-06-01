@@ -1,0 +1,5 @@
+{
+  "name": "Remix: Simulador de Lentes Esféricas",
+  "description": "Um aplicativo didático para explorar a formação de imagens em lentes e o comportamento óptico (refração) em lentes plano-convexas.",
+  "requestFramePermissions": []
+}
