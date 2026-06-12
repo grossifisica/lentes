@@ -143,6 +143,106 @@ export default function ImageFormation() {
             />
           </div>
         </section>
+
+        {/* Visibility Controls for Light Rays */}
+        <section className="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+          <div className="flex items-center gap-2 text-slate-800 font-bold border-b border-slate-100 pb-3">
+            <Eye size={18} className="text-blue-600" />
+            <h2 className="text-sm font-bold uppercase tracking-wider">Raios Luminosos</h2>
+          </div>
+          
+          <div className="flex flex-col gap-2.5">
+            {/* Ray 1 */}
+            <div className="flex items-center justify-between gap-3 p-1.5 rounded-xl hover:bg-slate-50 transition-colors">
+              <div className="flex items-center gap-2.5">
+                <div className="w-3 h-3 rounded bg-orange-500 shadow-sm shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold text-slate-700">Raio 1</span>
+                  <span className="text-[10px] text-slate-400 font-medium">Paralelo / Foco</span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowRay1(!showRay1)}
+                className={`p-1.5 rounded-lg transition-colors border ${showRay1 ? 'bg-blue-50 border-blue-100 text-blue-600 hover:bg-blue-100' : 'bg-slate-100 border-slate-200 text-slate-400 hover:bg-slate-200'}`}
+                title={showRay1 ? "Ocultar Raio 1" : "Mostrar Raio 1"}
+              >
+                {showRay1 ? <Eye size={14} /> : <EyeOff size={14} />}
+              </button>
+            </div>
+
+            {/* Ray 2 */}
+            <div className="flex items-center justify-between gap-3 p-1.5 rounded-xl hover:bg-slate-50 transition-colors">
+              <div className="flex items-center gap-2.5">
+                <div className="w-3 h-3 rounded bg-purple-500 shadow-sm shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold text-slate-700">Raio 2</span>
+                  <span className="text-[10px] text-slate-400 font-medium">Centro Óptico</span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowRay2(!showRay2)}
+                className={`p-1.5 rounded-lg transition-colors border ${showRay2 ? 'bg-blue-50 border-blue-100 text-blue-600 hover:bg-blue-100' : 'bg-slate-100 border-slate-200 text-slate-400 hover:bg-slate-200'}`}
+                title={showRay2 ? "Ocultar Raio 2" : "Mostrar Raio 2"}
+              >
+                {showRay2 ? <Eye size={14} /> : <EyeOff size={14} />}
+              </button>
+            </div>
+
+            {/* Ray 3 */}
+            <div className="flex items-center justify-between gap-3 p-1.5 rounded-xl hover:bg-slate-50 transition-colors">
+              <div className="flex items-center gap-2.5">
+                <div className="w-3 h-3 rounded bg-sky-600 shadow-sm shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold text-slate-700">Raio 3</span>
+                  <span className="text-[10px] text-slate-400 font-medium">Foco / Paralelo</span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowRay3(!showRay3)}
+                className={`p-1.5 rounded-lg transition-colors border ${showRay3 ? 'bg-blue-50 border-blue-100 text-blue-600 hover:bg-blue-100' : 'bg-slate-100 border-slate-200 text-slate-400 hover:bg-slate-200'}`}
+                title={showRay3 ? "Ocultar Raio 3" : "Mostrar Raio 3"}
+              >
+                {showRay3 ? <Eye size={14} /> : <EyeOff size={14} />}
+              </button>
+            </div>
+
+            {/* Ray 4 */}
+            <div className="flex items-center justify-between gap-3 p-1.5 rounded-xl hover:bg-slate-50 transition-colors">
+              <div className="flex items-center gap-2.5">
+                <div className="w-3 h-3 rounded bg-emerald-600 shadow-sm shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold text-slate-700">Raio 4</span>
+                  <span className="text-[10px] text-slate-400 font-medium">Antiprincipal</span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowRay4(!showRay4)}
+                className={`p-1.5 rounded-lg transition-colors border ${showRay4 ? 'bg-blue-50 border-blue-100 text-blue-600 hover:bg-blue-100' : 'bg-slate-100 border-slate-200 text-slate-400 hover:bg-slate-200'}`}
+                title={showRay4 ? "Ocultar Raio 4" : "Mostrar Raio 4"}
+              >
+                {showRay4 ? <Eye size={14} /> : <EyeOff size={14} />}
+              </button>
+            </div>
+
+            {/* Extensions */}
+            <div className="flex items-center justify-between gap-3 p-1.5 rounded-xl hover:bg-slate-50 transition-colors border-t border-slate-100 pt-3 mt-1">
+              <div className="flex items-center gap-2.5">
+                <div className="w-3 h-3 rounded border border-dashed border-slate-400 bg-slate-50 shrink-0" />
+                <div className="flex flex-col">
+                  <span className="text-xs font-bold text-slate-700 font-bold">Prolongamento</span>
+                  <span className="text-[10px] text-slate-400 font-medium font-medium">Pontilhado retro</span>
+                </div>
+              </div>
+              <button 
+                onClick={() => setShowExtensions(!showExtensions)}
+                className={`p-1.5 rounded-lg transition-colors border ${showExtensions ? 'bg-blue-50 border-blue-100 text-blue-600 hover:bg-blue-100' : 'bg-slate-100 border-slate-200 text-slate-400 hover:bg-slate-200'}`}
+                title={showExtensions ? "Ocultar Prolongamentos" : "Mostrar Prolongamentos"}
+              >
+                {showExtensions ? <Eye size={14} /> : <EyeOff size={14} />}
+              </button>
+            </div>
+          </div>
+        </section>
       </aside>
 
       {/* Simulation Canvas and Calculations */}
@@ -428,79 +528,6 @@ export default function ImageFormation() {
               </g>
             )}
           </svg>
-
-          {/* Legend Overlay */}
-          <div className="absolute bottom-4 right-6 bg-white/90 backdrop-blur-sm border border-slate-200 p-4 rounded-2xl shadow-sm flex flex-col gap-2.5 max-w-[260px] md:max-w-xs">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-0.5 bg-orange-500" />
-                <span className="text-[10px] font-bold text-slate-600 uppercase">Raio 1: Paralelo / Foco</span>
-              </div>
-              <button 
-                onClick={() => setShowRay1(!showRay1)}
-                className={`p-1 rounded-md transition-colors ${showRay1 ? 'text-blue-600 hover:bg-blue-50' : 'text-slate-400 hover:bg-slate-100'}`}
-                title={showRay1 ? "Ocultar Raio 1" : "Mostrar Raio 1"}
-              >
-                {showRay1 ? <Eye size={14} /> : <EyeOff size={14} />}
-              </button>
-            </div>
-
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-0.5 bg-purple-500" />
-                <span className="text-[10px] font-bold text-slate-600 uppercase">Raio 2: Centro Óptico</span>
-              </div>
-              <button 
-                onClick={() => setShowRay2(!showRay2)}
-                className={`p-1 rounded-md transition-colors ${showRay2 ? 'text-blue-600 hover:bg-blue-50' : 'text-slate-400 hover:bg-slate-100'}`}
-                title={showRay2 ? "Ocultar Raio 2" : "Mostrar Raio 2"}
-              >
-                {showRay2 ? <Eye size={14} /> : <EyeOff size={14} />}
-              </button>
-            </div>
-
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-0.5 bg-sky-600" />
-                <span className="text-[10px] font-bold text-slate-600 uppercase">Raio 3: Foco / Paralelo</span>
-              </div>
-              <button 
-                onClick={() => setShowRay3(!showRay3)}
-                className={`p-1 rounded-md transition-colors ${showRay3 ? 'text-blue-600 hover:bg-blue-50' : 'text-slate-400 hover:bg-slate-100'}`}
-                title={showRay3 ? "Ocultar Raio 3" : "Mostrar Raio 3"}
-              >
-                {showRay3 ? <Eye size={14} /> : <EyeOff size={14} />}
-              </button>
-            </div>
-
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-0.5 bg-emerald-600" />
-                <span className="text-[10px] font-bold text-slate-600 uppercase">Raio 4: Antiprincipal / Antiprincipal</span>
-              </div>
-              <button 
-                onClick={() => setShowRay4(!showRay4)}
-                className={`p-1 rounded-md transition-colors ${showRay4 ? 'text-blue-600 hover:bg-blue-50' : 'text-slate-400 hover:bg-slate-100'}`}
-                title={showRay4 ? "Ocultar Raio 4" : "Mostrar Raio 4"}
-              >
-                {showRay4 ? <Eye size={14} /> : <EyeOff size={14} />}
-              </button>
-            </div>
-
-            <div className="flex items-center justify-between gap-4 border-t border-slate-200 pt-2.5">
-              <div className="flex items-center gap-2">
-                <div className="w-4 h-0.5 border-t border-dashed border-slate-400" />
-                <span className="text-[10px] font-bold text-slate-600 uppercase">Prolongamentos</span>
-              </div>
-              <button 
-                onClick={() => setShowExtensions(!showExtensions)}
-                className={`p-1 rounded-md transition-colors ${showExtensions ? 'text-blue-600 hover:bg-blue-50' : 'text-slate-400 hover:bg-slate-100'}`}
-                title={showExtensions ? "Ocultar Prolongamentos" : "Mostrar Prolongamentos"}
-              >
-                {showExtensions ? <Eye size={14} /> : <EyeOff size={14} />}
-              </button>
-            </div>
-          </div>
         </div>
 
         {/* Image Properties Summary */}
